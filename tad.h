@@ -228,7 +228,7 @@ void buscaPontos(Tree *raiz, int pontoConsulta[K], double raio)
             dequeue(&fila, &atual);
 
             distancia = distanciaEuclidiana(pontoConsulta[0], pontoConsulta[1], atual->coord[0], atual->coord[1]);
-            if (distancia <= raio && atual->coord[0] != pontoConsulta[0] && atual->coord[1] != pontoConsulta[1])
+            if (distancia <= raio)
                 enqueue(&aux, atual);
             if (!Nula(atual->esq) && pontoConsulta[0] - raio <= atual->coord[0])
                 enqueue(&fila, atual->esq);

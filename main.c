@@ -28,7 +28,8 @@ int main()
     system("cls");
 
     int n = 6, i;
-    int coord[n][K];
+    //int coord[][K]={{30,40}, {5,25},{10,12}, {70,70}, {50,30}, {35,45}};
+	int coord[n][K];
     double raio = 10.0;
     int pontoConsulta[K];
     Tree *raiz;
@@ -36,8 +37,8 @@ int main()
     srand(time(NULL));
     for (i = 0; i < n; i++)
     {
-        coord[i][0] = rand() % 100;
-        coord[i][1] = rand() % 100;
+    	coord[i][0] = rand() % 100;
+    	coord[i][1] = rand() % 100;
     }
 
     printf("pontos gerados a partir de n = %d: ",n);
@@ -52,8 +53,10 @@ int main()
     printf("==================================================================================\n");
 
     printf("\n\n\n=================================BUSCA PELO PONTO=================================\n");
-    pontoConsulta[0] = coord[(n - 1) / rand() % 10][0];
-    pontoConsulta[1] = coord[(n - 1) / rand() % 10][1];
+    //pontoConsulta[0] = 8;
+    //pontoConsulta[1] = 18;
+    pontoConsulta[0] = rand() % 100;
+    pontoConsulta[1] = rand() % 100;
     buscaPontos(raiz, pontoConsulta, raio);
     printf("\n==================================================================================\n");
     return 0;
